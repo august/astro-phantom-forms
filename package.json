@@ -1,0 +1,33 @@
+{
+  "name": "astro-phantom-forms",
+  "version": "0.1.0",
+  "description": "Hide your forms from bots. Hydrate for humans. Astro's stealthiest anti-spam weapon.",
+  "type": "module",
+  "exports": {
+    "./components/PhantomForm.astro": "./src/components/PhantomForm.astro",
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "keywords": [
+    "astro",
+    "forms",
+    "bot prevention",
+    "hydration",
+    "spam protection",
+    "data island",
+    "cloakform"
+  ],
+  "author": "August Trometer",
+  "license": "MIT",
+  "peerDependencies": {
+    "astro": "^5.8.1"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "astro": "^5.8.1",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.3"
+  }
+}

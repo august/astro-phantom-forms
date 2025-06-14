@@ -1,0 +1,48 @@
+# ----------------------
+# Node & Build
+# ----------------------
+node_modules/
+dist/
+build/
+.temp/
+.cache/
+.vite/
+
+# ----------------------
+# Environment
+# ----------------------
+.env
+.env.* # if you use variants like .env.test or .env.local
+
+# ----------------------
+# Logs & Reports
+# ----------------------
+*.log
+*.tsbuildinfo
+coverage/
+test-results/
+
+# ----------------------
+# System Garbage
+# ----------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# ----------------------
+# Output zips (e.g., your downloadables)
+# ----------------------
+*.zip
+
+node_modules/
+dist/
+build/
+coverage/
+*.log
+.env*
+.vscode/
+*.zip
+.DS_Store

@@ -1,0 +1,1 @@
+export { default as PhantomForm } from './components/PhantomForm.astro';

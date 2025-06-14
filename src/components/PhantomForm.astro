@@ -1,0 +1,30 @@
+---
+/**
+ * PhantomForm.astro
+ * ------------------
+ * A sneaky wrapper component that hides your forms in the SSR output
+ * and only hydrates them on the client, killing bots dead.
+ *
+ * Props:
+ * @prop {'load'|'idle'|'visible'} [mode='visible']
+ */
+export interface Props {
+  mode?: 'load' | 'idle' | 'visible';
+}
+
+const { mode = 'visible' } = Astro.props;
+
+if (mode === 'server') {
+  throw new Error(
+    "🚫 mode='server' disables hydration — defeats PhantomForm's purpose. Use 'load', 'idle', or 'visible'."
+  );
+}
+---
+
+<!--
+  💡 PhantomForm is running in '${mode}' mode.
+  This form is cloaked like a Romulan warbird.
+  Bots? They get nada. You’re welcome.
+-->
+
+<slot client:{mode} />
