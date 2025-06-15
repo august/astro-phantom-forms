@@ -4,10 +4,18 @@
   "description": "Hide your forms from bots. Hydrate for humans. Astro's stealthiest anti-spam weapon.",
   "type": "module",
   "exports": {
-    "./components/PhantomForm.astro": "./src/components/PhantomForm.astro",
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./components/PhantomForm.astro": "./dist/components/PhantomForm.astro"
   },
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "astro",
     "forms",
@@ -23,7 +31,10 @@
     "astro": "^5.8.1"
   },
   "scripts": {
-    "test": "vitest"
+    "build": "rm -rf dist && mkdir -p dist/components && tsc && cp src/components/*.astro dist/components/",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "prepublishOnly": "npm run build && npm test"
   },
   "devDependencies": {
     "astro": "^5.8.1",

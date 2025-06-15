@@ -1,0 +1,49 @@
+---
+// Home page with navigation to test pages
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Phantom Forms Test</title>
+    <style>
+      body { font-family: system-ui, sans-serif; padding: 2rem; max-width: 800px; margin: 0 auto; }
+      h1 { border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
+      ul { display: grid; gap: 1rem; padding: 0; }
+      li { list-style: none; }
+      a { display: block; padding: 1rem; background: #f4f4f4; border-radius: 0.5rem; }
+      a:hover { background: #eaeaea; }
+    </style>
+  </head>
+  <body>
+    <h1>👻 Phantom Forms Test Pages</h1>
+    
+    <p>This project demonstrates different ways to use astro-phantom-forms.</p>
+    
+    <ul>
+      <li>
+        <a href="/standard-import">Standard Import</a>
+        <p>Using the named import: <code>import &#123; PhantomForm &#125; from 'astro-phantom-forms';</code></p>
+      </li>
+      
+      <li>
+        <a href="/direct-import">Direct Component Import</a>
+        <p>Using direct path: <code>import PhantomForm from 'astro-phantom-forms/components/PhantomForm.astro';</code></p>
+      </li>
+      
+      <li>
+        <a href="/hydration-modes">Hydration Modes</a>
+        <p>Examples of different hydration modes: load, idle, visible</p>
+      </li>
+    </ul>
+    
+    <h2>How to Test</h2>
+    <ol>
+      <li>Visit each page and use browser dev tools to view the source HTML</li>
+      <li>Confirm the form HTML is <strong>not</strong> present in the source</li>
+      <li>Check browser console to see form counts before/after hydration</li>
+      <li>Test form submission (will submit to a nonexistent endpoint)</li>
+    </ol>
+  </body>
+</html>

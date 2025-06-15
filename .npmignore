@@ -1,0 +1,22 @@
+# Development files
+node_modules/
+tests/
+.github/
+vitest.config.ts
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Lock files (optional - some prefer to include these)
+package-lock.json
+
+# Build process files
+tsconfig.tsbuildinfo

@@ -1,7 +1,9 @@
+![](./phantom.webp)
+
 # 👻 astro-phantom-forms
 
 Hide your forms from bots. Hydrate for humans.  
-No CAPTCHAs. No reCAPTCHAs. No “click all the fire hydrants.”  
+No CAPTCHAs. No reCAPTCHAs. No "click all the fire hydrants."  
 Just pure, static stealth.
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -13,12 +15,18 @@ Just pure, static stealth.
 ## ⚡ Quick Install
 
 ```bash
+# From npm registry
 npm install astro-phantom-forms
+
+# Or directly from GitHub
+npm install github:username/astro-phantom-forms
 ```
 
 ---
 
 ## 🧪 Quick Use
+
+### Standard Import
 
 ```astro
 ---
@@ -32,7 +40,36 @@ import LoginForm from '../components/LoginForm.jsx';
 </PhantomForm>
 ```
 
-This wraps your form in a **client-only hydration island** — the form doesn’t exist in the SSR HTML.  
+### Direct Component Import
+
+You can also import the component directly:
+
+```astro
+---
+// src/pages/login.astro
+import PhantomForm from 'astro-phantom-forms/components/PhantomForm.astro';
+import LoginForm from '../components/LoginForm.jsx';
+---
+
+<PhantomForm mode="visible">
+  <LoginForm />
+</PhantomForm>
+```
+
+### Development Using Local Link
+
+For local development across projects:
+
+```bash
+# In the astro-phantom-forms directory
+npm run build
+npm link
+
+# In your Astro project directory
+npm link astro-phantom-forms
+```
+
+This wraps your form in a **client-only hydration island** — the form doesn't exist in the SSR HTML.  
 Bots scraping the page get *nothing*. Humans? They get the goods.
 
 ---
@@ -62,9 +99,9 @@ Bots scraping the page get *nothing*. Humans? They get the goods.
 npx vitest run
 ```
 
-We don’t SSR-render `.astro` components in tests — that’s a war crime.  
+We don't SSR-render `.astro` components in tests — that's a war crime.  
 Instead, we test hydration behavior directly from the source.  
-It’s fast. It’s stable. It works.
+It's fast. It's stable. It works.
 
 See `CONTRIBUTING.md` for the full nerd-rationale.
 
@@ -72,7 +109,7 @@ See `CONTRIBUTING.md` for the full nerd-rationale.
 
 ## 🙅‍♂️ Not For Devs Who Say:
 
-> “Let me kiss your boots, mistress. Please take me to your Spambot Red Room.”
+> "Let me kiss your boots, mistress. Please take me to your Spambot Red Room."
 
 If you love CAPTCHAs, honeypot fields, and regex spaghetti... this ain't for you.  
 We believe in **stealth over struggle**. Forms should be invisible until they matter — not a minefield of JS gymnastics.

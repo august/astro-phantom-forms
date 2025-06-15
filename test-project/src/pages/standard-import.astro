@@ -1,0 +1,51 @@
+---
+// Test using the standard named import
+import { PhantomForm } from 'astro-phantom-forms';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Standard Import Test</title>
+    <style>
+      body { font-family: system-ui, sans-serif; padding: 2rem; max-width: 800px; margin: 0 auto; }
+      form { display: grid; gap: 1rem; max-width: 400px; padding: 1rem; border: 1px solid #ddd; border-radius: 0.5rem; }
+      button { background: #4a69bd; color: white; border: none; padding: 0.5rem; border-radius: 0.25rem; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <h1>Standard Import Test</h1>
+    <p><a href="/">&larr; Back to home</a></p>
+    
+    <div>
+      <h2>Contact Form (visible mode)</h2>
+      <PhantomForm mode="visible">
+        <form action="/submit" method="post">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </PhantomForm>
+    </div>
+    
+    <script>
+      // This script helps verify the form is indeed not present in SSR
+      console.log('Initial load - Forms in document:', document.querySelectorAll('form').length);
+      
+      setTimeout(() => {
+        console.log('After hydration - Forms in document:', document.querySelectorAll('form').length);
+      }, 1000);
+    </script>
+  </body>
+</html>
