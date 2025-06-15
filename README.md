@@ -2,8 +2,8 @@
 
 # 👻 astro-phantom-forms
 
-**Stop spam bots without annoying humans**  
-Block form spam with invisible client-side hydration. No CAPTCHAs, no honeypots, no user friction.
+## Stop spam bots without annoying humans
+### Block form spam with invisible client-side hydration. No CAPTCHAs, no honeypots, no user friction.
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Built for Astro](https://img.shields.io/badge/astro-forms-orange)
