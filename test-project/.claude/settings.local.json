@@ -5,7 +5,16 @@
       "Bash(pkill:*)",
       "Bash(true)",
       "Bash(npm run dev:*)",
-      "Bash(npx astro dev:*)"
+      "Bash(npx astro dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm test:*)",
+      "Bash(curl:*)",
+      "Bash(rm:*)",
+      "WebFetch(domain:docs.astro.build)",
+      "Bash(npm pack:*)",
+      "Bash(npm run:*)",
+      "Bash(ls:*)",
+      "Bash(npm --version)"
     ],
     "deny": []
   }

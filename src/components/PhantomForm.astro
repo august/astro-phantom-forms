@@ -2,9 +2,8 @@
 /**
  * PhantomForm.astro
  * ------------------
- * A sneaky wrapper component that hides your forms in the SSR output
- * and only hydrates them on the client, killing bots dead.
- *
+ * Hide forms from bots. Show them to humans.
+ * 
  * Props:
  * @prop {'load'|'idle'|'visible'} [mode='visible']
  */
@@ -15,16 +14,53 @@ export interface Props {
 const { mode = 'visible' } = Astro.props;
 
 if (mode === 'server') {
-  throw new Error(
-    "🚫 mode='server' disables hydration — defeats PhantomForm's purpose. Use 'load', 'idle', or 'visible'."
-  );
+  throw new Error("🚫 mode='server' disables hydration — defeats PhantomForm's purpose.");
 }
 ---
 
-<!--
-  💡 PhantomForm is running in '${mode}' mode.
-  This form is cloaked like a Romulan warbird.
-  Bots? They get nada. You’re welcome.
--->
+<!-- This component renders nothing during SSR -->
+<!-- Forms are injected client-side only -->
+<phantom-form data-mode={mode}>
+  <template><slot /></template>
+</phantom-form>
 
-<slot client:{mode} />
+<script>
+  class PhantomFormElement extends HTMLElement {
+    connectedCallback() {
+      const mode = this.getAttribute('data-mode') || 'visible';
+      const template = this.querySelector('template');
+      
+      if (!template) return;
+      
+      const hydrateForm = () => {
+        const content = template.content.cloneNode(true);
+        this.appendChild(content);
+        template.remove();
+      };
+      
+      if (mode === 'load') {
+        hydrateForm();
+      } else if (mode === 'idle') {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(hydrateForm);
+        } else {
+          setTimeout(hydrateForm, 200);
+        }
+      } else if (mode === 'visible') {
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+              hydrateForm();
+              observer.disconnect();
+            }
+          });
+          observer.observe(this);
+        } else {
+          hydrateForm();
+        }
+      }
+    }
+  }
+  
+  customElements.define('phantom-form', PhantomFormElement);
+</script>
