@@ -1,4 +1,4 @@
-![](./phantom.webp)
+# ![Phantom Forms for Astro - Spam Bot Prevention](./phantom.webp)
 
 # 👻 astro-phantom-forms
 
