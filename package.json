@@ -1,6 +1,6 @@
 {
   "name": "astro-phantom-forms",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "Hide your forms from bots. Hydrate for humans. Astro's stealthiest anti-spam weapon.",
   "type": "module",
   "exports": {
@@ -23,7 +23,22 @@
     "hydration",
     "spam protection",
     "data island",
-    "cloakform"
+    "cloakform",
+    "anti-spam",
+    "anti-bot",
+    "anti-hcaptcha",
+    "anti-recaptcha",
+    "anti-spambot",
+    "cloaking",
+    "cloak",
+    "login",
+    "sign up",
+    "signup",
+    "anti-captcha",
+    "auth",
+    "no spam",
+    "no bot",
+    "no spam bot"
   ],
   "author": "August Trometer",
   "license": "MIT",
@@ -36,9 +51,17 @@
     "test": "vitest",
     "prepublishOnly": "npm run build && npm test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/august/astro-phantom-forms.git"
+  },
   "devDependencies": {
     "astro": "^5.8.1",
     "typescript": "^5.8.3",
     "vitest": "^3.2.3"
+  },
+  "homepage": "https://github.com/august/astro-phantom-forms#readme",
+  "bugs": {
+    "url": "https://github.com/august/astro-phantom-forms/issues"
   }
 }
