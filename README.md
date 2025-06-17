@@ -33,11 +33,14 @@ import { PhantomForm } from 'astro-phantom-forms';
 ---
 
 <PhantomForm mode="visible">
+
+  <!-- Your form here -->
   <form action="/contact" method="post">
     <input type="email" name="email" placeholder="your@email.com" />
     <textarea name="message" placeholder="Your message"></textarea>
     <button type="submit">Send Message</button>
   </form>
+
 </PhantomForm>
 ```
 
