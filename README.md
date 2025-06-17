@@ -1,4 +1,4 @@
-![Phantom Forms for Astro - Spam Bot Prevention](./phantom.webp)
+![Phantom Forms for Astro - Spam Bot Prevention](https://raw.githubusercontent.com/august/astro-phantom-forms/main/phantom.webp)
 
 ![npm version](https://img.shields.io/npm/v/astro-phantom-forms)
 
