@@ -2,10 +2,6 @@
 
 ![npm version](https://img.shields.io/npm/v/astro-phantom-forms)
 
-> **npm install astro-phantom-forms**  
-> Then wrap your forms with `<PhantomForm>` to keep bots out.  
-> Works with Astro 5.8+ — No CAPTCHAs. No honeypots. No drama.
-
 # 👻 astro-phantom-forms
 
 ## Stop spam bots without annoying humans
